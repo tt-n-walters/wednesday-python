@@ -10,7 +10,7 @@ def convert_value(value: str):
     elif "." in value:
         return int(float(value) * 100)
     elif value == "":
-        return 999999
+        return 9999999
     else:
         raise ValueError(value)
 
@@ -55,11 +55,11 @@ values = np.array(data[1:])
 values = convert_value(values)
 
 
-values[0][values[0] == 999999] = 24
-values[1][:1300][values[1][:1300] == 999999] = 24
-values[1][1300:][values[1][1300:] == 999999] = 20
-values[2][values[2] == 999999] = 18
-values[7][values[7] == 999999] = 33
+values[0][values[0] == 9999999] = 24
+values[1][:1300][values[1][:1300] == 9999999] = 24
+values[1][1300:][values[1][1300:] == 9999999] = 20
+values[2][values[2] == 9999999] = 18
+values[7][values[7] == 9999999] = 33
 
 dates = np.array(convert_date(dates), dtype="datetime64")
 
@@ -85,7 +85,7 @@ print(values.shape)
 
 yearly_averages = np.zeros((3, 19), dtype=float)
 
-for i in range(15):
+for i in range(19):
     year = 1997 + i
     year_rows = dates.astype("datetime64[Y]") == np.datetime64(str(year))
     year_data = values[:3, year_rows]
