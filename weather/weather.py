@@ -94,7 +94,7 @@ for i in range(19):
     yearly_averages[:, i] = averages
 
 x_axis = range(1997, 2016)
-plt.plot(x_axis, yearly_averages[0])
-plt.plot(x_axis, yearly_averages[1])
-plt.plot(x_axis, yearly_averages[2])
+plt.plot(x_axis, yearly_averages[0], c="o")
+plt.plot(x_axis, yearly_averages[1], c="g")
+plt.plot(x_axis, yearly_averages[2], c="y")
 plt.show()
